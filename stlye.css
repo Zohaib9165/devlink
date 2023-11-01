@@ -1,0 +1,59 @@
+body {
+  background-color: #FAFAFA;
+  /* background-color: black; */
+}
+.bgdark {
+  background-color: white;
+}
+.buttonSet {
+  border-radius: 8px;
+  border: 4px solid #efebff;
+}
+
+.iconSet {
+  color: blue;
+  font-size: 130%;
+  font-weight: 400;
+}
+.buttonSet1 {
+  border-radius: 8px;
+  font-size: 130%;
+  font-weight: 400;
+}
+.buttonSet1:is(:focus, :active) {
+  background-color: #efebff;
+  color: blue;
+}
+.buttonSet1:hover {
+  color: blue;
+}
+.buttonSet3 {
+  border-radius: 8px;
+  border: 1px solid blue;
+  font-size: 130%;
+  font-weight: 600;
+  color: blue;
+}
+.buttonSet4{
+    border-radius: 8px;
+    border: 1px solid blue;
+    font-size: 130%;
+    font-weight: 600;
+    color: blue;
+    width: 90%;
+}
+.buttonSet3:hover {
+  background-color: #efebff;
+  border: 1px solid blue;
+}
+.mobileImgSet {
+  padding: 90px 20px 90px 140px;
+}
+.heading{
+    font-size: 50px;
+    font-weight: 700;
+}
+.para{
+    font-size: 23px;
+    color: #737373;
+}
