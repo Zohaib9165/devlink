@@ -54,8 +54,49 @@ function Link_add(li_id) {
   let img_react = document.getElementById("link_added1");
   let color= objColor[li_id];
   img_react.setAttribute("fill", color);
- console.log(color)
+//  console.log(color)
   let sev_text = document.getElementById("IconName");
   sev_text.innerHTML = li_id;
   sev_text.setAttribute("fill", "#fff");
+}
+function showPreview() {
+  // alert("pagal");
+  var element11 = document.getElementById("previewPage");
+  element11.classList.remove("d-none");
+  var element12 = document.getElementById("mainContainer");
+  element12.classList.add("d-none");
+}
+function backPreview() {
+  // alert("pagal");
+  var element11 = document.getElementById("previewPage");
+  element11.classList.add("d-none");
+  var element12 = document.getElementById("mainContainer");
+  element12.classList.remove("d-none");
+}
+
+
+
+function saveData() {
+  // alert(element11);
+  var element11 = document.getElementById("dropDownbtn");
+  let result = element11.value.toLowerCase()
+  var element12 = document.getElementById("linkVerify");
+  // var regex = new RegExp("^https://github.com/" + username + "/[a-zA-Z0-9_-]+/?$", "i");
+  
+  // Construct the regular expression directly
+  var regex = new RegExp("^https?://(?:www\\.)?" + result + "\\.com/[a-zA-Z0-9_-]+(?:\\?[a-zA-Z0-9_=&-]+)?/?$", "i");
+
+  var element13 = document.getElementById("paragraph");
+
+console.log(regex.test(element12.value))
+// alert(result);
+  // console.log(regex);
+  // console.log(element12.value);
+if(regex.test(element12.value)){
+  var element15 = document.getElementById("goTowebLink");
+  element15.setAttribute("href", element12.value);
+}
+else{
+  element13.innerHTML = 'Please Check the URl';
+}
 }

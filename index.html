@@ -19,7 +19,7 @@
     <title>Link Sharing</title>
   </head>
   <body>
-    <div class="container-fluid" style="margin-top: 24px">
+    <div class="container-fluid " style="margin-top: 24px" id="mainContainer">
       <div class="row bgdark" style="padding:  12px 10px 10px 10px">
         <div class="col-12">
           <div class="row">
@@ -30,7 +30,7 @@
             </div>
 
             <div class="col-md-7  pt-1" style="display: flex; align-items: center;">
-              <button class="btn buttonSet1 active py-3 me-2" style="width: 16%"   onclick="insertLink()">
+              <button class="btn buttonSet1  py-3 me-2" style="width: 16%"   onclick="insertLink()">
                 <i class="fa-solid fa-link me-2"></i>Links
               </button>
 
@@ -44,6 +44,7 @@
                   margin-top: 2px;
                   padding: 15px 10px 15px 10px;
                 "
+                onclick="showPreview()"
               >
                 Preview
               </button>
@@ -64,20 +65,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="600" height="932" fill="none" viewBox="0 0 308 632">
               <path stroke="#737373" d="M1 54.5C1 24.953 24.953 1 54.5 1h199C283.047 1 307 24.953 307 54.5v523c0 29.547-23.953 53.5-53.5 53.5h-199C24.953 631 1 607.047 1 577.5v-523Z"/>
               <path fill="#fff" stroke="#737373" d="M12 55.5C12 30.923 31.923 11 56.5 11h24C86.851 11 92 16.149 92 22.5c0 8.008 6.492 14.5 14.5 14.5h95c8.008 0 14.5-6.492 14.5-14.5 0-6.351 5.149-11.5 11.5-11.5h24c24.577 0 44.5 19.923 44.5 44.5v521c0 24.577-19.923 44.5-44.5 44.5h-195C31.923 621 12 601.077 12 576.5v-521Z"/>
-            
-              <!-- <path stroke="#737373" d="M0.8 65.4C0.8 29.943 29.943 0.8 65.4 0.8h238.8c35.457 0 65.4 29.143 65.4 64.6v627.6c0 35.457-29.143 64.6-64.6 64.6h-238.8c-35.457 0-65.4-29.143-65.4-64.6v-627.6Z"/>
-              <path fill="#fff" stroke="#737373" d="M14.4 66.6C14.4 35.107 38.307 13.2 67.8 13.2h28.8c11.161 0 12.8 1.506 12.8 9.6 0 6.529 5.191 11.961 11.591 11.961h114.4c6.399 0 11.591-5.432 11.591-11.961 0-8.094 1.639-9.6 9.6-9.6h28.8c38.876 0 55.36 39.846 55.36 51.4v625.2c0 11.554-16.484 51.4-55.36 51.4h-234c-21.406 0-43.2-21.907-43.2-44.4v-625.2Z"/> -->
-              
-                
-              
-
 
               <circle cx="153.5" cy="112" r="48" fill="#EEE"/>
               <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8"/>
               <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4"/>
-              <rect id="link_added1" width="237" height="44" x="35" y="278" fill="#EEE" rx="8">
+              <a  id="goTowebLink" target="_blank">
+              <rect id="link_added1" href="#" width="237" height="44" x="35" y="278" fill="#EEE" rx="8">
               </rect>
-              <text id="IconName" x="95" y="310" fill="#EEE" font-size="28px" font-weight="400" stroke="#EEE">YouTube </text>
+              <text id="IconName" x="95" y="310" fill="#EEE" font-size="28px" font-weight="400" stroke="#EEE">YouTube </text></a>
               <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
               
               <rect width="237" height="44" x="35" y="342" fill="#EEE" rx="8"/>
@@ -261,11 +256,13 @@
                             ><i class="fa-solid fa-link"></i
                           ></span>
                           <input
+                           id="linkVerify"
                             type="text"
                             class="form-control py-4 inputSet2"
                             placeholder=" e.g. htpps://githup.com/user"
                           />
                         </div>
+                        <p id="paragraph" style="color: red; font-size: 18px;"></p>
                       </div>
                     </div>
                   </div>
@@ -304,7 +301,7 @@
 
               <div class=" parentCard bgc py-3 mt-5 mx-2 mb-3  parentDiv1 ">
                  <div class=" row p-0">
-                   <div class="col-2 ms-4 setName ">First name*</div>
+                   <div class="col-2 ms-4 setName" id="firstName">First name*</div>
                    <div class="col-2"></div>
                    <div class="col-7 ">
                      <input type="text" class=" mt-4 form-control setFormInput" placeholder="e.g Jhon">
@@ -328,27 +325,70 @@
               </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
+            <hr class="line" />
+            <div class="footerSet">
+              <button class="buttonSet5 float-end px-5 py-3" onclick="saveData()">Save</button>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
-        
-        <hr class="line" />
-        <div class="footerSet">
-          <button class="buttonSet5 float-end px-5 py-3">Save</button>
-        </div>
+<div class="container-fluid p-0 d-none" id="previewPage">
+<div class="p-0 mt-0" style="position: relative; width: 100%;height: 100%;color: #EFEBFF;">
+
+<div class="p-0 m-0" style="position: absolute; width: 100%; height: 48%; z-index: -1; background-color:#633CFF; border-bottom-left-radius: 35px;border-bottom-right-radius: 35px; ">
+
+</div>
+
+<div>
+  <div class="row" style=" margin-left: 70px;margin-right: 70px; ">
+    <div class="col-12"  style="padding: 17px 0px; background-color: #633CFF;"></div>
+    <div class="row py-3 border p-0 m-0" style="background-color: white; border-radius: 15px !important;">
+      <div class="col-12">
+        <button
+                  class="btn backButton ms-2"
+                  style="
+                    width: 11%;
+                    margin-top: 2px;
+                    padding: 15px 25px 15px 27px;
+                  "
+                  onclick="backPreview()"
+                >
+                Back to Editor
+                </button>
+                <button class="btn link p-3 float-end" style="width: 10%; padding: 15px 25px 15px 27px !important;" >
+                 Share Link
+                </button>
       </div>
     </div>
+    <div class="row">
+      <div class="col-4 mt-5 shadow-lg" style=" z-index: 4; margin: auto;
+      width: 25%;
+      min-height: 730px;
+      border: 3px solid white;
+      padding: 10px;
+      background-color: #FFFFFF;
+      margin-top: 150px !important;
+      border-radius: 35px !important;">
+      <div class="row">
+
+</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
     <script src="./logic.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -64,11 +64,14 @@ body {
   border-radius: 8px;
   font-size: 130%;
   font-weight: 600;
-  background-color: #d7ceff;
+  background-color:#633CFF ;
   border: 1px solid #d7ceff;
   color: white;
   font-size: 22px;
   font-weight: 700;
+}
+.buttonSet5:hover{
+  background-color: #d7ceff;
 }
 .buttonSet3:hover {
   background-color: #efebff;
@@ -253,4 +256,32 @@ background-color: #fafafa;
   border: 2px solid white;
   border-radius: 15px;
   padding: 30px 15px 0px 20px;
+}
+.head{
+  background-color: #633CFF;
+}
+.link{
+  border-radius: 15px;
+  font-size: 130%;
+  font-weight: 600;
+  background-color: #613BFA;
+  color: #efebff;
+}
+.backButton {
+  border-radius: 15px;
+  border: 1px solid blue;
+  font-size: 130%;
+  font-weight: 500;
+  color: blue;
+  margin-top: auto;
+}
+.link:hover{
+  background-color: #BEAEFF;
+  border: #613BFA;
+  color: #efebff;
+}
+.backButton:hover{
+  background-color: #BEAEFF;
+  border: #613BFA;
+  color: blue;
 }
