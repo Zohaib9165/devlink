@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./stlye.css" />
+  <script src="https://kit.fontawesome.com/c8db8d261b.js" crossorigin="anonymous"></script>
+  <title>Link Sharing</title>
+</head>
+<body>
+  <div class="container-fluid " style="margin-top: 24px" id="mainContainer">
+    <div class="row bgdark" style="padding:  12px 10px 10px 10px">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-5 " style="padding: 12px 10px 10px 10px">
+            <div>
+              <img src="./logo.svg" alt="img not found" width="40%" />
+            </div>
+          </div>
+          <div class="col-md-7  pt-1" style="display: flex; align-items: center;">
+            <button class="btn buttonSet1  py-3 me-2" style="width: 16%" onclick="insertLink()">
+              <i class="fa-solid fa-link me-2"></i>Links
+            </button>
+            <button class="btn buttonSet1 p-3" style="width: 24%" onclick="addProfile()">
+              <i class="fa-regular fa-circle-user pe-2"></i>Profile Details
+            </button>
+            <button class="btn buttonSet3 me-5 float-end" style="
+                  width: 15%;
+                  margin-top: 2px;
+                  padding: 15px 10px 15px 10px;
+                " onclick="showPreview()">
+              Preview
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 25px">
+      <div class="col-md-5 p-0 divSet">
+        <div class="me-md-2 bgdark mobileImgSet">
+          <!-- <img
+              src="./mobile imge.svg"
+              class="img-fluid"
+              style="width: 400px"
+              alt=""
+              /> -->
+             
+              <div class=" m-0" id="Svg_image">  
+              
+              </div>
+
+              <div class="nameSvgDiv p-0 m-0"> 
+                <h5 class="UserName" id="userName"></h5>
+                <p class="mt-3 UserMail" id="userMail"></p>
+              </div>
+
+              <div class="setImage" id="svgImg"> 
+                <img id="imagePreview" alt="Image Preview">
+              </div>
+            <svg xmlns="http://www.w3.org/2000/svg"   width="600" height="932" fill="none" viewBox="0 0 308 632">
+              <path stroke="#737373"
+              d="M1 54.5C1 24.953 24.953 1 54.5 1h199C283.047 1 307 24.953 307 54.5v523c0 29.547-23.953 53.5-53.5 53.5h-199C24.953 631 1 607.047 1 577.5v-523Z" />
+              <path fill="#fff" stroke="#737373"
+              d="M12 55.5C12 30.923 31.923 11 56.5 11h24C86.851 11 92 16.149 92 22.5c0 8.008 6.492 14.5 14.5 14.5h95c8.008 0 14.5-6.492 14.5-14.5 0-6.351 5.149-11.5 11.5-11.5h24c24.577 0 44.5 19.923 44.5 44.5v521c0 24.577-19.923 44.5-44.5 44.5h-195C31.923 621 12 601.077 12 576.5v-521Z" />
+              <circle cx="153.5" cy="112" r="48" fill="#EEE" />
+
+              <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8" id="nameDiv" />
+            <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4"  id="mailDiv"/>
+
+            <a id="goTowebLink" target="_blank">
+              <rect id="link_added" href="#" width="237" height="44" x="35" y="278" fill="#EEE" rx="8">
+              </rect>
+              <text id="WebsiteName" x="95" y="310" fill="#EEE" font-size="28px" font-weight="400" stroke="#EEE">YouTube
+              </text>
+            </a>
+
+          </svg>
+
+
+        </div>
+      </div>
+      <div class="col-md-7 parentCard" id="hideLink">
+        <div class="ms-md-2 bgdark parentDiv Image_formDiv">
+          <h1 class="heading px-5 ">Customize your links</h1>
+          <p class="mt-md-0 px-5 para">
+            Add/edit/remove links below and then share all your profiles with
+            the world!
+          </p>
+          <button class="btn buttonSet4 mx-5 mb-5" style="height: 70px" onclick="addLink()">
+            + Add new link
+          </button>
+          <div class="card" id="zohaib">
+            <div class="cardImage">
+              <img src="./mobile icon .svg" alt="" style="height: 200px" />
+            </div>
+            <div class="card-body mt-md-0">
+              <h1 class="card-title heading text-center mb-3">
+                Let’s get you started
+              </h1>
+              <p class="card-text para1 text-center">
+                Use the “Add new link” button to get started. Once you have
+                more than one <br />
+                link, you can reorder and edit them. We’re here to help you
+                share your profiles with everyone!
+              </p>
+            </div>
+          </div>
+          <div class="card1 px-3 py-5 d-none" id="ali">
+            <div class="row">
+              <div class="col-2 linkSet">= Link#1</div>
+              <div class="col-8"></div>
+              <div class="col-2 linkSet text-end"><a href="#" onclick="removeCard()">Remove</a></div>
+            </div>
+            <div class="card-body mt-md-0">
+              <div class="row">
+                <div class="col-12 platform ms-4">Platform</div>
+              </div>
+              <div class="row mt-0">
+                <div class="col-12">
+                  <div class="input-group inputDivSet mt-2">
+                    <span class="input-group-text iconSet" id="input_left_icon"></span>
+                    <input type="text" id="dropDownbtn" class="form-control dropdown-toggle py-4 linkInputSet "
+                      data-bs-toggle="dropdown" aria-expanded="false" ></input>
+                    <ul class="dropdown-menu dropMenu mt-1">
+                      <li class="height" id="GitHub" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#">
+                          <i class="fa-brands fa-github" id="GitHub_icon"></i> GitHub</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="YouTube" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-youtube"
+                            id="YouTube_icon"></i> YouTube
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="linkedin" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-linkedin"
+                            id="linkedin_icon"></i> LinkedIn</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="facebook" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-facebook"
+                            id="facebook_icon"></i> Facebook</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="Frontend_Mentor" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#">
+                          <img src="./Simpleicons-Team-Simple-Frontendmentor.512.png" class="iconSet1"
+                            alt="image not found" />
+                          Frontend Mentor</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="Twitch" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-twitch"
+                            id="Twitch_icon"></i> Twitch</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="stack" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-stack-overflow"
+                            id="stack_icon"></i> Stack
+                          Overflow</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="Dev_to" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#">
+                          <img src="./dev-dot-to.svg" class="iconSet2" alt="" />
+                          Dev.to</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="CodeWars" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#">
+                          <img src="./4691329_codewars_icon.png" class="iconSet2" alt=" icon not found" />
+                          CodeWars</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" id="CodePen" />
+                      </li>
+                      <li class="height" id="codepen" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-codepen"
+                            id="codepen_icon"></i> CodePen</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="code" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-free-code-camp"
+                            id="code_icon"></i>
+                          freeCodeCamp</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="twitter" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-twitter"
+                            id="twitter_icon"></i> Twitter</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="envelope" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-solid fa-envelope"
+                            id="envelope_icon"></i> Email</a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider" />
+                      </li>
+                      <li class="height" id="gitlab" onclick="Link_add(this.id)">
+                        <a class="dropdown-item textSizeing mt-3" href="#"><i class="fa-brands fa-gitlab"
+                            id="gitlab_icon"></i> GitLab</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- <div class="row mt-4">
+                  <div class="col-12 paltform ms-4">Link</div>
+                </div> -->
+                <div class="row mt-0">
+                  <div class="col-12">
+                    <div class="input-group dropBox me-5">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text iconSet" id="basic-addon1"><i class="fa-solid fa-link"></i></span>
+                        <input id="linkVerify" type="text" class="form-control py-4 inputSet2"
+                          placeholder=" e.g. htpps://githup.com/user" />
+                      </div>
+                      <p id="paragraph" style="color: red; font-size: 18px;"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+              <!-- this is where i am storing Tags  -->
+          <div class="w-100 mt-3" id="newDiv">
+
+          </div>
+
+          <div class="Save_button_block w-100 ">
+            <hr class="line mt-5" />
+            <div class="footerSet">
+              <button class="buttonSet5 float-end px-5 py-3" onclick="saveData()">Save</button>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+      <div class="col-md-7 parentCard d-none" id="addProfile">
+        <div class="ms-md-2 bgdark parentDiv Image_formDiv">
+          <h1 class="heading px-5">Profile Details</h1>
+          <p class="mt-md-3 px-5 para">
+            Add your details to create a personal touch to your profile.
+          </p>
+          <div class="divSet1">
+            <div class="row" style="padding: 2px 0px;">
+              <div class="col-3" style="margin-top: 120px; font-size: 25px; color: #737373;">Profile Picture</div>
+              <div class="col-2"></div>
+              <!-- Custom Image Upload Container -->
+              <div class="col-4 pictureInputSet mt-5">
+                <label for="fileInput" class="upload-text">Click to Upload</label>
+                <input type="file" id="fileInput" accept="image/*" onchange="previewImage()">
+                <img id="imagePreview1" alt="">
+              </div>
+              <div class="col-3" style="margin-top: 100px; font-size: 20px; color: #737373;">
+                <p class="ms-5 float-end">
+                  Image must be below 1024x1024px. Use PNG or JPG format.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class=" parentCard bgc py-3 mt-5 mx-2 mb-3  parentDiv1 ">
+            <div class=" row p-0">
+              <div class="col-2 ms-4 setName">First name*</div>
+              <div class="col-2"></div>
+              <div class="col-7 ">
+                <input type="text" id="firstName" class=" mt-4 form-control setFormInput" placeholder="e.g Jhon">
+              </div>
+            </div>
+            <div class=" row  p-0">
+              <div class="col-2 ms-4 setName ">Last name*</div>
+              <div class="col-2"></div>
+              <div class="col-7 ">
+                <input type="text" id="lastName" class=" mt-4 form-control setFormInput" placeholder="e.g Applessed">
+              </div>
+            </div>
+            <div class=" row  p-0">
+              <div class="col-2 ms-4 setName">Email</div>
+              <div class="col-2"></div>
+              <div class="col-7 ">
+                <input type="text" id="email" class=" mt-4 form-control setFormInput" placeholder="e.g email@gamil.com">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- </div> -->
+          <div class="Save_button_block w-100 ">
+            <hr class="line" />
+            <div class="footerSet">
+              <button class="buttonSet5 float-end px-5 py-3" onclick="saveData()">Save</button>
+            </div>
+          </div>
+ 
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Preview Page  -->
+  <div class="container-fluid p-0 d-none" id="previewPage">
+    <div class="p-0 mt-0" style="position: relative; width: 100%;height: 100%;color: #EFEBFF;">
+
+      <div class="p-0 m-0"
+        style="position: absolute; width: 100%; height: 48%; z-index: -1; background-color:#633CFF; border-bottom-left-radius: 35px;border-bottom-right-radius: 35px; ">
+
+      </div>
+
+      <div>
+        <div class="row" style=" margin-left: 70px;margin-right: 70px; ">
+          <div class="col-12" style="padding: 17px 0px; background-color: #633CFF;"></div>
+          <div class="row py-3 border p-0 m-0" style="background-color: white; border-radius: 15px !important;">
+            <div class="col-12">
+              <button class="btn backButton ms-2" style="
+                    width: 11%;
+                    margin-top: 2px;
+                    padding: 15px 25px 15px 27px;
+                  " onclick="backPreview()">
+                Back to Editor
+              </button>
+              <button class="btn link p-3 float-end" style="width: 10%; padding: 15px 25px 15px 27px !important;">
+                Share Link
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 mt-5 shadow-lg" style=" z-index: 4; margin: auto;
+      width: 25%;
+      min-height: 730px;
+      border: 3px solid white;
+      padding: 20px 20px 20px 20px;
+      background-color: #ffff;
+      margin-top: 150px !important;
+      border-radius: 35px !important;">
+              <div class="row mt-5 imageSetDiv" id="image2">
+                <img src="" alt="" class="img-fluid" id="getImage">
+              </div>
+              <div class="row">
+                <div class="col-3 "></div>
+                <div class="col-6 mt-4 text-center p-0">
+
+                  <h3 class="setNameDiv " id="getInput"></h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3"></div>
+                <p class="col-4 mt-3 ms-4 float-start emailDivSet" id="getEmail">
+                </p>
+                <div class="col-4" ></div>
+              </div>
+             <div class="px-2">
+              <div class="row mt-3 ">
+              <a href="#" id="Atag">
+                <div class="col-12 previewDivSet"id="PreviewWebName"></div>
+              </a>
+        
+
+              </div>
+             </div>
+              <div id="htmlDiv">
+
+              </div>
+              <!-- <div class="row mt-3">
+                <div class="col-12  previewDivSet" id="webName2"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 previewDivSet" id="webName3"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 previewDivSet" id="webName4"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 previewDivSet" id="webName5"></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+  <script src="./logic.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

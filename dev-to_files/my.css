@@ -1,0 +1,38 @@
+a.tag:hover {
+    background-color: #6091e0 !important;
+}
+
+.tag_active {
+    background-color: #6091e0 !important;
+}
+
+.ha-img-container {
+  position: relative;
+  display: inline-block;
+  width: 509px;
+  height: 336px;
+}
+
+.ha-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.ha-svg-1 {
+  position: absolute;
+  top: 155px;
+  left: 144px;
+  width: 26px;
+  height: 26px;
+  filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(5deg) brightness(103%) contrast(107%);
+}
+
+.ha-svg-2 {
+  position: absolute;
+  top: 224px;
+  left: 96px;
+  width: 26px;
+  height: 26px;
+  filter: invert(37%) sepia(86%) saturate(334%) hue-rotate(165deg) brightness(92%) contrast(93%);
+}
